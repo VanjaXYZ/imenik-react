@@ -1,0 +1,33 @@
+.contactList {
+  margin-top: 20px;
+}
+
+.contactList h2 {
+  padding: 10px;
+  font-size: 2.2rem;
+}
+
+.contact {
+  padding: 10px;
+  margin: 6px;
+  background-color: rgb(228, 226, 225);
+  border-radius: 6px;
+}
+
+.contact li {
+  padding: 2px;
+  list-style-type: none;
+  font-size: 1.6rem;
+}
+
+.contact li span.name {
+  color: red;
+  text-shadow: 1px -1px 0px black;
+  font-size: 1.6rem;
+}
+
+.contact li span.num {
+  color: green;
+  text-shadow: 1px -1px 0px black;
+  font-size: 1.6rem;
+}
