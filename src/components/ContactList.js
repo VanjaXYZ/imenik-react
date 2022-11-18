@@ -1,23 +1,25 @@
 import React from "react";
-import DeleteContact from "./DeleteContact";
+import DeleteButton from "./DeleteButton";
+
 import "./ContactList.css";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, onDeleteHandler }) => {
   return (
     <div className="contactList">
       <h2>Contacts</h2>
       <ul>
         {contacts.map((contact) => (
           <div className="contact">
-            <li key={contact.name}>
-              <span className="name">Name: </span>
-              {contact.name}
-            </li>
-            <li key={contact.number}>
-              <span className="num">Number: </span>
-              {contact.num}
-            </li>
-            <DeleteContact />
+            <div className="contact-data">
+              <li key={contact.id}>
+                <span className="name">Name: </span>
+                {contact.name} <br></br>
+                <span className="num">Number: </span>
+                {contact.num}
+              </li>
+            </div>
+
+            <DeleteButton onDeleteHandler={onDeleteHandler} contact={contact} />
           </div>
         ))}
       </ul>

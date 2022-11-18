@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NewUser.css";
 
 const NewUser = ({ addContact }) => {
-  const [name, setName] = useState("");
   const [num, setNum] = useState("");
+  const [name, setName] = useState(() => {
+    const saved = localStorage.getItem("data");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
+  const id = Math.floor(Math.random() * 10000) + 1;
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(name, num));
+  }, [name, num]);
 
   return (
     <div>
@@ -15,6 +25,7 @@ const NewUser = ({ addContact }) => {
               type="text"
               name="name"
               onChange={(e) => setName(e.target.value)}
+              autoComplete="off"
             />
           </div>
           <div>
@@ -26,7 +37,7 @@ const NewUser = ({ addContact }) => {
             />
           </div>
         </div>
-        <button type="button" onClick={() => addContact({ name, num })}>
+        <button type="button" onClick={() => addContact({ id, name, num })}>
           Add
         </button>
       </form>

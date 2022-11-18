@@ -1,0 +1,13 @@
+.btn button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.45rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn button:active {
+  font-size: 1.1rem;
+}

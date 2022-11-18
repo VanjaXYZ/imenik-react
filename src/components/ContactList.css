@@ -12,6 +12,9 @@
   margin: 6px;
   background-color: rgb(228, 226, 225);
   border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .contact li {
